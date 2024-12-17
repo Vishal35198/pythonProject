@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index Page</title>
+</head>
+
+<body>
+    <h3>Services Providers </h3>
+    <!-- <a href="/add">ADD</a> -->
+    <br>
+    <table>
+        <thead>
+            <th>Id_</th>
+            <th>Service_Provider_Name</th>
+            <th>Experience</th>
+            <th>Cost</th>
+            <th>#</th>
+        </thead>
+        {% for data in trainers %}
+        <tbody>
+            <td>{{data.service_provider_id}}</td>
+            <td><a href="/trainers/{{data.service_id}}">{{data.name}}</a></td>
+            <td>{{data.experience}}</td>
+            <td>{{data.cost}}</td>
+            <td><a href="/delete/{{data.id}}" type="button">Delete</a></td>
+        </tbody>
+        {% endfor%}
+    </table>
+</body>
+
+</html>

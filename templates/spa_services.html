@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index Page</title>
+</head>
+
+<body>
+    <h3>Users</h3>
+    <a href="/add">ADD</a>
+    <br>
+    <table>
+        <thead>
+            <th>SPa_id</th>
+            <th>Spa_name</th>
+            <th>Spa_add</th>
+            <th>Spa_services</th>
+            <th>#</th>
+        </thead>
+        {% for data in spa %}
+        <tbody>
+            <td>{{data.spa_id}}</td>
+            <td>{{data.spa_name}}</td>
+            <td>{{data.spa_add}}</td>
+            <td>{{data.spa_services}}</td>
+            <td><a href="/delete/{{data.id}}" type="button">Delete</a></td>
+        </tbody>
+        {% endfor%}
+    </table>
+</body>
+
+</html>

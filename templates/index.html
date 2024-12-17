@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index Page</title>
+</head>
+
+<body>
+    <h3>Services Offered {{users | get_length()}}</h3>
+    <a href="/add">ADD</a>
+    <br>
+    <table>
+        <thead>
+            <th>Id_</th>
+            <th>Name</th>
+            <th>description</th>
+            <th>#</th>
+        </thead>
+        {% for data in users %}
+        <tbody>
+            <td>{{data.service_id}}</td>
+            <td><a href="/trainers/{{data.service_id}}">{{data.name}}</a></td>
+            <td>{{data.description}}</td>
+            <td><a href="/delete/{{data.id}}" type="button">Delete</a></td>
+        </tbody>
+        {% endfor%}
+    </table>
+</body>
+
+</html>
